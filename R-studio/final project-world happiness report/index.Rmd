@@ -1,0 +1,63 @@
+---
+title: "World Happiness Analysis"
+author: "Sirena Akopyan, Umme-Kulsum Darugar, Allyson Graylin, Ariel (Ha Eun) Lee"
+date: "11/19/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library("knitr")
+source("first_chart.R")
+source("second_chart.R")
+source("third_chart.R")
+source("summary_information.R")
+source("aggregate_table.R")
+
+```
+
+## Introduction
+With the development of many technologies, people have increasingly focused on finding happiness and meaning in life. The desire to live a better life makes people strive to work harder so that they could find happiness through recreation. Since happiness is subjective, we thought it would be interesting to see what generally makes people happier.
+
+That is why for our project we will be pulling data from the World Happiness Report, which includes data from around 155 countries.The data includes happiness score and rank and to what extent different factors (gdp, freedom etc) affect it. 
+
+## Summary
+
+The number of rows in our data set is `r summary_info$num_observations`. The number of columns is `r summary_info$num_features`. The country that received the highest happiness score was `r summary_info$country_max_score` which received a happiness score of `r summary_info$max_score`.The country that received the lowest happiness score was `r summary_info$country_lowest_score` which received a happiness score of `r summary_info$lowest_score`.
+
+## Table
+```{r echo = FALSE} 
+knitr :: kable(data_table)
+```
+The data table shows the average happiness score for each region.We chose to group by region because we thought it would be interesting to see how different parts of the world compare, instead of just looking at individual countries. 
+
+The region of Australia and New Zealand seems to have the highest average happiness score at 7.285 while the region of Sub-Saharan Africa has the lowest average happiness score at 4.203.
+
+The table has been arranged in descending order from highest to lowest and the scores were rounded to three decimal places so that they would not be distracting to the viewer.
+
+## Chart 1
+```{r echo=FALSE}
+histogram
+```
+
+This chart displays the distribution of generosity among all of the countries listed in this dataset. The consensus among citizens in most countries is that their generosity ranks in the range of .05 to .25: not a very high evaluation. 
+
+## Chart 2
+```{r echo=FALSE}
+second_chart
+```
+ 
+Relationship between GDP level and happiness score
+- We wanted to know the effect of the GDP index on the happiness score of the people of that country.
+- As a result of the analysis, it was concluded that the higher the GDP, the higher the happiness score.
+
+## Chart 3
+```{r fig.width=8.5, echo=FALSE}
+third_chart
+```
+
+This chart shows which factors have the largest influence on happiness. From this graphic, we can see a general trend in the most happy and least happy countries. Although the bottom four countries may not have as strong of a trend, we can see that the most influential factors across countries are typically social support, GDP per capita, and life expectancy.
+

@@ -1,0 +1,49 @@
+---
+title: "Incarceration-ass3"
+author: "Ha Eun Lee"
+date: "11/18/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+incarceration <- read.csv("/Users/haeun/Desktop/incarceration_trends.csv")
+knitr::opts_chunk$set(echo = TRUE)
+source("analysis.r")
+library("dplyr")
+library("ggplot2")
+library("tidyverse")
+library("maps")
+library("mapproj")
+```
+
+
+## Introduction and Summary information
+1. The size of the data set is `r data_description$observations`.
+2. The range of years the data set covers is `r data_description$year`, and the most recent year in the data is 2018, which is 3 years ago.
+3. The total population in the data set is `r data_description$total_pop_no_year`.
+4. The total number of incarcerated in the data set is `r data_description$total_incarcerated_pop`.
+5. The total population of incarceration tends to decrease in about 2015. I believe that this is because of some strict policies on crime. 
+
+
+## Trends over time chart
+- The incarcerated population is getting bigger as years pass, but it has decreased slightly since 2015.
+
+```{r incarceration_trends_plot, echo=FALSE}
+incarceration_over_time_plot
+```
+
+
+## Variable comparison chart
+- In those 10 states, black incarceration rate is much higher than its total incarceration rate.
+
+```{r top_10_black_incarceration_plot, echo=FALSE}
+top_10_black_incarceration_plot
+```
+
+
+## Map 
+- The ratio of black and white in Lincoln county is the highest. I think this could be due to higher black population in Lincoln county compare to other counties in WA. 
+
+```{r racial_incarceration_discrepancy_map_plot, echo=FALSE}
+racial_incarceration_discrepancy_map_plot
+```
