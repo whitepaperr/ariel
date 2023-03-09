@@ -1,7 +1,7 @@
 library(tidyverse)
 
 #load data sets 
-data2015 <- read.csv("/Users/haeun/git/INFO 201/final-project-umme-kulsum-j/data/world_happiness_report/2015.csv")
+data2015 <- read.csv("/Users/haeun/git/info201/final-project-umme-kulsum-j/data/world_happiness_report/2015.csv")
 
 
 # A function that takes in a data set and returns a list of info about it:

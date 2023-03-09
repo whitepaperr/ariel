@@ -1,6 +1,6 @@
 library(tidyverse)
 
-happiness_df <- read.csv("/Users/haeun/git/INFO 201/final-project-umme-kulsum-j/data/world_happiness_report/2019.csv")
+happiness_df <- read.csv("/Users/haeun/git/info201/final-project-umme-kulsum-j/data/world_happiness_report/2019.csv")
 colnames(happiness_df) <- c("rank", "country", "score", "GDP per capita", "social support", "life expectancy", "freedom", "generosity", "perceptions of gov corruption")
 
 happiness_df <- happiness_df %>%

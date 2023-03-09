@@ -6,7 +6,7 @@ library("plotly")
 
 
 # Loading Dataset
-df <- read.csv("/Users/haeun/git/INFO 201/final-project-umme-kulsum-j/data/world_happiness_report/2019.csv")
+df <- read.csv("/Users/haeun/git/info201/final-project-umme-kulsum-j/data/world_happiness_report/2019.csv")
 colnames(df) <- c("rank", "country", "score", "GDP per capita", "social support", "life expectancy", "freedom", "generosity", "perceptions of gov corruption")
 
 # Define server logic
